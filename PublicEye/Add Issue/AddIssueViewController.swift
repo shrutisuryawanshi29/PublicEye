@@ -15,7 +15,7 @@ import CoreLocation
 import CoreML
 import Vision
 
-class AddIssueViewController: UIViewController {
+class AddIssueViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var submitBtn: UIButton!
     @IBOutlet weak var addIssueTblViw: UITableView!
@@ -23,18 +23,26 @@ class AddIssueViewController: UIViewController {
     
     var imageIssue: UIImage? = nil
     var activityView : UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
-    
+    var locationManager: CLLocationManager?
     var imageURL: URL? = nil
     
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
     
+    var locationUrl = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initialSetup()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        
+        locationManager?.requestWhenInUseAuthorization()
+        
     }
     
     @objc func dismissKeyboard() {
@@ -53,12 +61,29 @@ class AddIssueViewController: UIViewController {
         self.view.backgroundColor = CustomColors.shared.background
         
         activityView.center = self.view.center
+        activityView.color = .black
         self.view.addSubview(activityView)
         
         submitBtn.backgroundColor = CustomColors.shared.primaryLight
         submitBtn.setTitleColor(.white, for: .normal)
         Utils.shared.cornerRadius(view: submitBtn)
         addIssueTblViw.register(UINib(nibName: "AddIssueTableViewCell", bundle: nil), forCellReuseIdentifier: "AddIssueTableViewCell")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            //show initial popup
+            let alert = UIAlertController(title: "We have automated things for you!", message: "Do you want to manually enter the data or auto detect by our application?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "AUTO DETECT", style: .default) {_ in
+                let vc = UIImagePickerController()
+                vc.sourceType = .camera
+                vc.allowsEditing = false
+                vc.delegate = self
+                self.present(vc, animated: true)
+            })
+            alert.addAction(UIAlertAction(title: "ENTER MANUALLY", style: .cancel) {_ in
+                self.activityView.startAnimating()
+                self.locationManager?.requestLocation()
+            })
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func backBtnClick(_ sender: Any) {
@@ -79,7 +104,7 @@ class AddIssueViewController: UIViewController {
             } else {
                 var dict =
                 ["description": cell.txtFldDescription.text,
-                 "landmark": cell.txtFldLandmark.text,
+                 "landmark": self.locationUrl == "" ? cell.txtFldLandmark.text : self.locationUrl,
                  "pincode": cell.txtFldLocation.text,
                  "current_date": Utils.shared.getCurrentDate(),
                  "image_url": self.imageURL?.absoluteString,
@@ -199,5 +224,36 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+}
+
+extension AddIssueViewController {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            print("When user did not yet determined")
+        case .restricted:
+            print("Restricted by parental control")
+        case .denied:
+            print("When user select option Dont't Allow")
+        case .authorizedWhenInUse:
+            print("When user select option Allow While Using App or Allow Once")
+            locationManager?.requestAlwaysAuthorization()
+        default:
+            print("default")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
+        
+        print("http://maps.google.com/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)")
+        self.locationUrl = "http://maps.google.com/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+        self.activityView.stopAnimating()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        //
     }
 }
