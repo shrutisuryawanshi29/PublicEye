@@ -35,6 +35,17 @@ class DashboardViewController: UIViewController {
                 var dict = document.data()
                 self.responseData.append(ResponseDataModel(description: dict["description"] as! String, landmark: dict["landmark"] as! String, pincode: dict["pincode"] as! String, currentDate: dict["current_date"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, status: dict["status"] as! String))
             }
+            
+            
+            if self.responseData.count == 0 {
+                //DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                let controller = storyboard.instantiateViewController(identifier: "WelcomeViewController") as! WelcomeViewController
+                controller.modalPresentationStyle = .popover
+                self.present(controller, animated: false)
+                //}
+            }
+            
             self.tblViw.reloadData()
         })
         

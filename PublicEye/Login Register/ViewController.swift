@@ -119,54 +119,78 @@ class ViewController: UIViewController {
         self.viewBg.backgroundColor = CustomColors.shared.background
     }
     
+    //login
     @objc func loginUser(_ sender: UIButton) {
-        if let email = txtloginemail.text, let pwd = txtloginpwd.text {
-            Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] authResult, error in
-              guard let strongSelf = self else { return }
-                if error != nil {
-                    return
+        
+        if txtloginemail.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter email"), animated: true)
+        } else if txtloginpwd.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter password"), animated: true)
+        }
+        else {
+            if let email = txtloginemail.text, let pwd = txtloginpwd.text {
+                Auth.auth().signIn(withEmail: email, password: pwd) { [weak self] authResult, error in
+                    guard let strongSelf = self else { return }
+                    if error != nil {
+                        self?.present(Utils.shared.showError(message: "Error with Login! Try Again!"), animated: true)
+                        return
+                    }
+                    
+                    var user = FIRUser()
+                    user.email = authResult?.user.email
+                    user.name = authResult?.user.displayName
+                    user.uid = authResult?.user.uid
+                    
+                    if let encoded = try? JSONEncoder().encode(user) {
+                        let defaults = UserDefaults.standard
+                        defaults.set(encoded, forKey: "FIRUser")
+                    }
+                    
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self?.present(controller, animated: true)
                 }
-                
-                var user = FIRUser()
-                user.email = authResult?.user.email
-                user.name = authResult?.user.displayName
-                user.uid = authResult?.user.uid
-                
-                if let encoded = try? JSONEncoder().encode(user) {
-                    let defaults = UserDefaults.standard
-                    defaults.set(encoded, forKey: "FIRUser")
-                }
-                
-                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
-                controller.modalPresentationStyle = .fullScreen
-                self?.present(controller, animated: true)
             }
         }
     }
     
+    //register
     @objc func loginWithEmailPwd(_ sender: UIButton) {
-        if let email = txtFldEmail.text, let pwd = txtFldPassword.text {
-            Auth.auth().createUser(withEmail: email, password: pwd) { [weak self] authResult, error in
-              guard let strongSelf = self else { return }
-                if error != nil {
-                    return
+        
+        if txtFname.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter first name"), animated: true)
+        } else if txtLname.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter last name"), animated: true)
+        } else if txtFldEmail.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter email"), animated: true)
+        } else if txtFldPassword.text?.isEmpty ?? true {
+            self.present(Utils.shared.showError(message: "Enter password"), animated: true)
+        }
+        else {
+            if let email = txtFldEmail.text, let pwd = txtFldPassword.text {
+                Auth.auth().createUser(withEmail: email, password: pwd) { [weak self] authResult, error in
+                    guard let strongSelf = self else { return }
+                    if error != nil {
+                        self?.present(Utils.shared.showError(message: "Error with Registration! Try Again!"), animated: true)
+                        return
+                    }
+                    
+                    var user = FIRUser()
+                    user.email = authResult?.user.email
+                    user.name = authResult?.user.displayName
+                    user.uid = authResult?.user.uid
+                    
+                    if let encoded = try? JSONEncoder().encode(user) {
+                        let defaults = UserDefaults.standard
+                        defaults.set(encoded, forKey: "FIRUser")
+                    }
+                    
+                    let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
+                    let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    self?.present(controller, animated: true)
                 }
-                
-                var user = FIRUser()
-                user.email = authResult?.user.email
-                user.name = authResult?.user.displayName
-                user.uid = authResult?.user.uid
-                
-                if let encoded = try? JSONEncoder().encode(user) {
-                    let defaults = UserDefaults.standard
-                    defaults.set(encoded, forKey: "FIRUser")
-                }
-                
-                let storyboard = UIStoryboard(name: "Dashboard", bundle: nil)
-                let controller = storyboard.instantiateViewController(identifier: "DashboardViewController") as! DashboardViewController
-                controller.modalPresentationStyle = .fullScreen
-                self?.present(controller, animated: true)
             }
         }
     }

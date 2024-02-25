@@ -93,6 +93,67 @@
             </objects>
             <point key="canvasLocation" x="-334" y="-24"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="OjR-BB-beZ">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="95P-4r-xFE" customClass="WelcomeViewController" customModule="MaintainMate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qTI-nN-BB6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ztr-yp-Nuj">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to PublicEye!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z08-aI-juF">
+                                <rect key="frame" x="18" y="426" width="357" height="25"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log your first issue!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3O-ph-5Fm">
+                                <rect key="frame" x="18" y="669" width="357" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzA-MX-yla">
+                                <rect key="frame" x="295" y="698" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="AZv-Io-eoc"/>
+                                    <constraint firstAttribute="height" constant="80" id="Fbg-H6-Lrz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IdR-aX-1wj"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IdR-aX-1wj" firstAttribute="trailing" secondItem="J3O-ph-5Fm" secondAttribute="trailing" constant="18" id="2zf-fv-Dzn"/>
+                            <constraint firstItem="J3O-ph-5Fm" firstAttribute="leading" secondItem="IdR-aX-1wj" secondAttribute="leading" constant="18" id="4ut-pC-Iwd"/>
+                            <constraint firstItem="ztr-yp-Nuj" firstAttribute="top" secondItem="qTI-nN-BB6" secondAttribute="top" id="6tL-z3-siL"/>
+                            <constraint firstItem="ztr-yp-Nuj" firstAttribute="leading" secondItem="IdR-aX-1wj" secondAttribute="leading" id="G4e-wK-Lcq"/>
+                            <constraint firstItem="z08-aI-juF" firstAttribute="centerY" secondItem="IdR-aX-1wj" secondAttribute="centerY" id="Gwn-Dt-gmB"/>
+                            <constraint firstItem="IdR-aX-1wj" firstAttribute="bottom" secondItem="HzA-MX-yla" secondAttribute="bottom" constant="40" id="Hn0-sz-Afy"/>
+                            <constraint firstItem="IdR-aX-1wj" firstAttribute="trailing" secondItem="HzA-MX-yla" secondAttribute="trailing" constant="18" id="SAK-lh-IOl"/>
+                            <constraint firstItem="z08-aI-juF" firstAttribute="leading" secondItem="IdR-aX-1wj" secondAttribute="leading" constant="18" id="SxU-Re-t6X"/>
+                            <constraint firstAttribute="bottom" secondItem="ztr-yp-Nuj" secondAttribute="bottom" id="acI-wn-Eif"/>
+                            <constraint firstItem="IdR-aX-1wj" firstAttribute="trailing" secondItem="ztr-yp-Nuj" secondAttribute="trailing" id="mBt-c1-zAi"/>
+                            <constraint firstItem="z08-aI-juF" firstAttribute="centerX" secondItem="IdR-aX-1wj" secondAttribute="centerX" id="naQ-rl-XVu"/>
+                            <constraint firstItem="IdR-aX-1wj" firstAttribute="trailing" secondItem="z08-aI-juF" secondAttribute="trailing" constant="18" id="qjb-QS-d78"/>
+                            <constraint firstItem="HzA-MX-yla" firstAttribute="top" secondItem="J3O-ph-5Fm" secondAttribute="bottom" constant="10" id="uJ3-5s-sYT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="ztr-yp-Nuj" id="Xsz-0p-Zb2"/>
+                        <outlet property="btnAddIssue" destination="HzA-MX-yla" id="VXF-qW-KYE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7en-w0-XNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626.71755725190837" y="-18.30985915492958"/>
+        </scene>
     </scenes>
     <resources>
         <image name="power" catalog="system" width="127" height="128"/>

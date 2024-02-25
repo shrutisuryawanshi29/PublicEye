@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-23-ffC">
-                                <rect key="frame" x="20" y="172.66666666666663" width="353" height="472"/>
+                                <rect key="frame" x="20" y="183.66666666666663" width="353" height="450"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-V8-tWG">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="472"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="450"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aoh-dF-3eM" customClass="MFTextField">
-                                                <rect key="frame" x="20" y="102.00000000000003" width="310" height="50"/>
+                                                <rect key="frame" x="20" y="80.000000000000028" width="310" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Vbt-Ug-5wH"/>
                                                 </constraints>
@@ -31,7 +31,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPA-Di-6Io" customClass="MFTextField">
-                                                <rect key="frame" x="20" y="172.00000000000003" width="310" height="50"/>
+                                                <rect key="frame" x="20" y="150.00000000000003" width="310" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="xXx-9R-dVg"/>
                                                 </constraints>
@@ -39,7 +39,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7RY-e5-BW3" customClass="MFTextField">
-                                                <rect key="frame" x="20" y="242" width="310" height="50"/>
+                                                <rect key="frame" x="20" y="220.00000000000003" width="310" height="49.999999999999972"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="f6C-f6-jVH"/>
                                                 </constraints>
@@ -56,15 +56,15 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="google.png" title="   REGISTER USING GMAIL"/>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b1P-hO-17L" customClass="MFTextField">
-                                                <rect key="frame" x="20" y="312" width="310" height="50"/>
+                                                <rect key="frame" x="20" y="290" width="310" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="09K-dL-9WL"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-z1-qh4">
-                                                <rect key="frame" x="20" y="402" width="313" height="50"/>
+                                                <rect key="frame" x="20" y="380" width="313" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ek5-M3-cQU"/>
                                                 </constraints>
@@ -79,7 +79,7 @@
                                         <constraints>
                                             <constraint firstItem="Aoh-dF-3eM" firstAttribute="leading" secondItem="MPZ-V8-tWG" secondAttribute="leading" constant="20" id="412-hM-M3d"/>
                                             <constraint firstItem="jPA-Di-6Io" firstAttribute="top" secondItem="Aoh-dF-3eM" secondAttribute="bottom" constant="20" id="4gW-kD-mbE"/>
-                                            <constraint firstItem="Aoh-dF-3eM" firstAttribute="top" secondItem="MPZ-V8-tWG" secondAttribute="top" constant="102.00000000000003" id="Bvd-9a-LH9"/>
+                                            <constraint firstItem="Aoh-dF-3eM" firstAttribute="top" secondItem="MPZ-V8-tWG" secondAttribute="top" constant="80" id="Bvd-9a-LH9"/>
                                             <constraint firstAttribute="trailing" secondItem="b1P-hO-17L" secondAttribute="trailing" constant="23" id="FsO-El-2mv"/>
                                             <constraint firstItem="PK1-z1-qh4" firstAttribute="leading" secondItem="MPZ-V8-tWG" secondAttribute="leading" constant="20" id="I0I-nA-Lhg"/>
                                             <constraint firstAttribute="trailing" secondItem="7RY-e5-BW3" secondAttribute="trailing" constant="23" id="IZh-TM-Ml7"/>
@@ -105,10 +105,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yH5-IY-143">
-                                <rect key="frame" x="20" y="172.66666666666663" width="353" height="472"/>
+                                <rect key="frame" x="20" y="183.66666666666663" width="353" height="450"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UJe-5x-lOX" customClass="MFTextField">
-                                        <rect key="frame" x="20" y="102.00000000000003" width="313" height="50"/>
+                                        <rect key="frame" x="20" y="100.00000000000003" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mNP-3C-YAb"/>
                                         </constraints>
@@ -116,15 +116,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9c-Ie-hfl" customClass="MFTextField">
-                                        <rect key="frame" x="20" y="172.00000000000003" width="313" height="50"/>
+                                        <rect key="frame" x="20" y="170.00000000000003" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fm3-e1-ceu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSC-zV-HAg">
-                                        <rect key="frame" x="20" y="402" width="313" height="50"/>
+                                        <rect key="frame" x="20" y="380" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="4Pv-va-aNi"/>
                                         </constraints>
@@ -137,27 +137,27 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="UJe-5x-lOX" firstAttribute="top" secondItem="yH5-IY-143" secondAttribute="top" constant="102" id="0aF-01-HI2"/>
+                                    <constraint firstItem="UJe-5x-lOX" firstAttribute="top" secondItem="yH5-IY-143" secondAttribute="top" constant="100" id="0aF-01-HI2"/>
                                     <constraint firstItem="v9c-Ie-hfl" firstAttribute="leading" secondItem="yH5-IY-143" secondAttribute="leading" constant="20" id="57a-5k-a6f"/>
-                                    <constraint firstItem="OSC-zV-HAg" firstAttribute="top" secondItem="v9c-Ie-hfl" secondAttribute="bottom" constant="180" id="Gmi-jd-Q91"/>
                                     <constraint firstItem="v9c-Ie-hfl" firstAttribute="top" secondItem="UJe-5x-lOX" secondAttribute="bottom" constant="20" id="K9M-50-Lcx"/>
                                     <constraint firstItem="UJe-5x-lOX" firstAttribute="leading" secondItem="yH5-IY-143" secondAttribute="leading" constant="20" id="LaI-oV-TRZ"/>
                                     <constraint firstAttribute="trailing" secondItem="UJe-5x-lOX" secondAttribute="trailing" constant="20" id="PVZ-15-vaK"/>
                                     <constraint firstAttribute="trailing" secondItem="v9c-Ie-hfl" secondAttribute="trailing" constant="20" id="Tun-qH-9dv"/>
+                                    <constraint firstItem="OSC-zV-HAg" firstAttribute="top" secondItem="v9c-Ie-hfl" secondAttribute="bottom" constant="159.99999999999997" id="WI4-Ay-mGZ"/>
                                     <constraint firstAttribute="bottom" secondItem="OSC-zV-HAg" secondAttribute="bottom" constant="20" id="ePu-dj-BjY"/>
                                     <constraint firstItem="OSC-zV-HAg" firstAttribute="leading" secondItem="yH5-IY-143" secondAttribute="leading" constant="20" id="fcS-BL-fIN"/>
                                     <constraint firstAttribute="trailing" secondItem="OSC-zV-HAg" secondAttribute="trailing" constant="20" id="vLV-64-5y7"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app logo" translatesAutoresizingMaskIntoConstraints="NO" id="bch-DH-Vus">
-                                <rect key="frame" x="146.66666666666666" y="112.66666666666669" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="bch-DH-Vus">
+                                <rect key="frame" x="136.66666666666666" y="123.66666666666669" width="119.99999999999997" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Xnh-2D-YHe"/>
-                                    <constraint firstAttribute="width" constant="100" id="YcH-Gf-a64"/>
+                                    <constraint firstAttribute="height" constant="120" id="Xnh-2D-YHe"/>
+                                    <constraint firstAttribute="width" constant="120" id="YcH-Gf-a64"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B56-bK-uoO">
-                                <rect key="frame" x="117" y="669.66666666666663" width="159" height="60"/>
+                                <rect key="frame" x="117" y="658.66666666666663" width="159" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="rrE-sH-4NX"/>
                                 </constraints>
@@ -227,7 +227,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="app logo" width="349" height="337"/>
+        <image name="appLogo" width="1024" height="1024"/>
         <image name="google.png" width="18" height="18"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

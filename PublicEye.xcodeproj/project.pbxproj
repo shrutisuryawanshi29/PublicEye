@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E19F56E2B8B5AA400AC707B /* Allpred.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 0E19F56D2B8B5AA400AC707B /* Allpred.mlpackage */; };
+		0E19F5702B8B690100AC707B /* PredictIssue.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 0E19F56F2B8B690000AC707B /* PredictIssue.mlpackage */; };
+		0E19F5722B8B836900AC707B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19F5712B8B836900AC707B /* WelcomeViewController.swift */; };
 		0EB0BE6B2B8A629300A88FE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE6A2B8A629300A88FE2 /* AppDelegate.swift */; };
 		0EB0BE6D2B8A629300A88FE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE6C2B8A629300A88FE2 /* SceneDelegate.swift */; };
 		0EB0BE6F2B8A629300A88FE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE6E2B8A629300A88FE2 /* ViewController.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E19F56D2B8B5AA400AC707B /* Allpred.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = Allpred.mlpackage; sourceTree = "<group>"; };
+		0E19F56F2B8B690000AC707B /* PredictIssue.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PredictIssue.mlpackage; sourceTree = "<group>"; };
+		0E19F5712B8B836900AC707B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0EB0BE672B8A629300A88FE2 /* PublicEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EB0BE6A2B8A629300A88FE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EB0BE6C2B8A629300A88FE2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 		0EB0BE872B8A7C1900A88FE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0E19F56F2B8B690000AC707B /* PredictIssue.mlpackage */,
+				0E19F56D2B8B5AA400AC707B /* Allpred.mlpackage */,
 				0EE931272B8ADDC3001D9D74 /* PublicEye.mlpackage */,
 				0EB0BE882B8A7C2900A88FE2 /* FIRUser.swift */,
 				0EE931252B8AD276001D9D74 /* ResponseDataModel.swift */,
@@ -152,6 +160,7 @@
 				0EB0BE8F2B8A868400A88FE2 /* DashboardTableViewCell.swift */,
 				0EB0BE902B8A868400A88FE2 /* DashboardTableViewCell.xib */,
 				0EB0BE932B8A86BD00A88FE2 /* DashboardViewController.swift */,
+				0E19F5712B8B836900AC707B /* WelcomeViewController.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -313,12 +322,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE931282B8ADDC4001D9D74 /* PublicEye.mlpackage in Sources */,
+				0E19F5722B8B836900AC707B /* WelcomeViewController.swift in Sources */,
 				0EB0BE852B8A77A000A88FE2 /* Utils.swift in Sources */,
+				0E19F56E2B8B5AA400AC707B /* Allpred.mlpackage in Sources */,
 				0EB0BE6F2B8A629300A88FE2 /* ViewController.swift in Sources */,
 				0EE931262B8AD276001D9D74 /* ResponseDataModel.swift in Sources */,
 				0EB0BE892B8A7C2900A88FE2 /* FIRUser.swift in Sources */,
 				0EE931232B8A94D0001D9D74 /* AddIssueTableViewCell.swift in Sources */,
 				0EB0BE6B2B8A629300A88FE2 /* AppDelegate.swift in Sources */,
+				0E19F5702B8B690100AC707B /* PredictIssue.mlpackage in Sources */,
 				0EB0BE822B8A768600A88FE2 /* CustomColors.swift in Sources */,
 				0EE9312B2B8ADF41001D9D74 /* Extensions.swift in Sources */,
 				0EB0BE6D2B8A629300A88FE2 /* SceneDelegate.swift in Sources */,

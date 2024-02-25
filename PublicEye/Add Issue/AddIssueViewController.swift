@@ -25,6 +25,9 @@ class AddIssueViewController: UIViewController, CLLocationManagerDelegate {
     var activityView : UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     var locationManager: CLLocationManager?
     var imageURL: URL? = nil
+    var pincode = ""
+    
+    var optionSelected = 1
     
     var request: VNCoreMLRequest?
     var visionModel: VNCoreMLModel?
@@ -72,6 +75,9 @@ class AddIssueViewController: UIViewController, CLLocationManagerDelegate {
             //show initial popup
             let alert = UIAlertController(title: "We have automated things for you!", message: "Do you want to manually enter the data or auto detect by our application?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "AUTO DETECT", style: .default) {_ in
+                self.optionSelected = 1
+                self.locationManager?.requestLocation()
+                
                 let vc = UIImagePickerController()
                 vc.sourceType = .camera
                 vc.allowsEditing = false
@@ -79,6 +85,7 @@ class AddIssueViewController: UIViewController, CLLocationManagerDelegate {
                 self.present(vc, animated: true)
             })
             alert.addAction(UIAlertAction(title: "ENTER MANUALLY", style: .cancel) {_ in
+                self.optionSelected = 2
                 self.activityView.startAnimating()
                 self.locationManager?.requestLocation()
             })
@@ -169,18 +176,44 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             return
         }
         
+//        do {
+//            let config = MLModelConfiguration()
+//            let model = try PublicEye(configuration: config)
+//            let input = PublicEyeInput(conv2d_input: buffer)
+//            
+//            let output = try model.prediction(input: input)
+//            let text = output.IdentityShapedArray
+//            if text.scalars[0] < text.scalars[1] {
+//                print("Pothole spotted in the given location. Requesting the concerned authorities to kindly fix it")
+//            }
+//            else {
+//                print("Great Road, no complains")
+//            }
+//            
+//        }
+//        catch {
+//            print(error.localizedDescription)
+//        }
+        
         do {
             let config = MLModelConfiguration()
-            let model = try PublicEye(configuration: config)
-            let input = PublicEyeInput(conv2d_input: buffer)
+            let model = try PredictIssue(configuration: config)
+            let input = PredictIssueInput(conv2d_input: buffer)
             
             let output = try model.prediction(input: input)
             let text = output.IdentityShapedArray
-            if text.scalars[0] < text.scalars[1] {
-                print("Pothole spotted in the given location. Requesting the concerned authorities to kindly fix it")
+            
+            if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 2 || text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 1{
+                if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? AddIssueTableViewCell {
+                    cell.txtFldDescription.text = "Pothole found"
+                }
             }
-            else {
-                print("Great Road, no complains")
+            else if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 0 {
+                
+                self.imageIssue = nil
+                self.imageURL = nil
+                self.addIssueTblViw.reloadData()
+                self.present(Utils.shared.showError(message: "It seems there is nothing wrong with this image! Try recapture image."), animated: true)
             }
             
         }
@@ -198,12 +231,14 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
         }
         
         activityView.startAnimating()
+        
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
         
-        analyzeImage(image: image)
+        if optionSelected == 1 {
+            analyzeImage(image: image)
+        }
         
-        /*
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
         let storageRef = Storage.storage(url: "gs://publiceye-aaac5.appspot.com").reference()
         let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().timeIntervalSince1970)")
@@ -218,7 +253,7 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
                 guard let imgurl = url else {return }
                 self.imageURL = imgurl
             }
-        }*/
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -251,6 +286,20 @@ extension AddIssueViewController {
         print("http://maps.google.com/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)")
         self.locationUrl = "http://maps.google.com/?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
         self.activityView.stopAnimating()
+        
+        CLGeocoder().reverseGeocodeLocation(manager.location!, completionHandler: { (placemarks, error) -> Void in
+            guard let getlocation = placemarks?.first?.postalCode else { print("Returned Nil"); return }
+            self.pincode = getlocation
+            
+            if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? AddIssueTableViewCell {
+                cell.txtFldLocation.text = self.pincode
+                cell.txtFldLandmark.text = self.locationUrl
+                self.addIssueTblViw.reloadData()
+            }
+            
+        })
+        
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
