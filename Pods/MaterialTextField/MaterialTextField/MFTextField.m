@@ -448,7 +448,7 @@ static NSTimeInterval const MFDefaultAnimationDuration = 0.3;
     }
 
     if (animated && !self.placeholderIsAnimating) {
-        [self.superview layoutIfNeeded];
+//        [self.superview layoutIfNeeded];
 
         self.placeholderIsAnimating = YES;
         self.placeholderLabelTopConstraint.constant = finalDistanceFromTop;

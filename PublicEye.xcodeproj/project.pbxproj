@@ -13,6 +13,18 @@
 		0EB0BE722B8A629300A88FE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE702B8A629300A88FE2 /* Main.storyboard */; };
 		0EB0BE742B8A629500A88FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE732B8A629500A88FE2 /* Assets.xcassets */; };
 		0EB0BE772B8A629500A88FE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE752B8A629500A88FE2 /* LaunchScreen.storyboard */; };
+		0EB0BE822B8A768600A88FE2 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE812B8A768600A88FE2 /* CustomColors.swift */; };
+		0EB0BE852B8A77A000A88FE2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE842B8A77A000A88FE2 /* Utils.swift */; };
+		0EB0BE892B8A7C2900A88FE2 /* FIRUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE882B8A7C2900A88FE2 /* FIRUser.swift */; };
+		0EB0BE8B2B8A7FE800A88FE2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE8A2B8A7FE800A88FE2 /* GoogleService-Info.plist */; };
+		0EB0BE8E2B8A82F900A88FE2 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE8D2B8A82F900A88FE2 /* Dashboard.storyboard */; };
+		0EB0BE912B8A868400A88FE2 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE8F2B8A868400A88FE2 /* DashboardTableViewCell.swift */; };
+		0EB0BE922B8A868400A88FE2 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EB0BE902B8A868400A88FE2 /* DashboardTableViewCell.xib */; };
+		0EB0BE942B8A86BD00A88FE2 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0BE932B8A86BD00A88FE2 /* DashboardViewController.swift */; };
+		0EE9311E2B8A945C001D9D74 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9311D2B8A945C001D9D74 /* AddIssueViewController.swift */; };
+		0EE931202B8A9467001D9D74 /* AddIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE9311F2B8A9467001D9D74 /* AddIssue.storyboard */; };
+		0EE931232B8A94D0001D9D74 /* AddIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE931212B8A94D0001D9D74 /* AddIssueTableViewCell.swift */; };
+		0EE931242B8A94D0001D9D74 /* AddIssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */; };
 		D72CF549F0D8FE9BE39DCEC2 /* Pods_PublicEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC09A77C11AF56419EA0A34 /* Pods_PublicEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +37,18 @@
 		0EB0BE732B8A629500A88FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EB0BE762B8A629500A88FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EB0BE782B8A629500A88FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EB0BE812B8A768600A88FE2 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		0EB0BE842B8A77A000A88FE2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0EB0BE882B8A7C2900A88FE2 /* FIRUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRUser.swift; sourceTree = "<group>"; };
+		0EB0BE8A2B8A7FE800A88FE2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0EB0BE8D2B8A82F900A88FE2 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		0EB0BE8F2B8A868400A88FE2 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		0EB0BE902B8A868400A88FE2 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
+		0EB0BE932B8A86BD00A88FE2 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0EE9311D2B8A945C001D9D74 /* AddIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
+		0EE9311F2B8A9467001D9D74 /* AddIssue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddIssue.storyboard; sourceTree = "<group>"; };
+		0EE931212B8A94D0001D9D74 /* AddIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIssueTableViewCell.swift; sourceTree = "<group>"; };
+		0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIssueTableViewCell.xib; sourceTree = "<group>"; };
 		463B9188E93ABC13C006D453 /* Pods-PublicEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicEye.debug.xcconfig"; path = "Target Support Files/Pods-PublicEye/Pods-PublicEye.debug.xcconfig"; sourceTree = "<group>"; };
 		9BA4D5D5E8A9BC2F7D77FFB3 /* Pods-PublicEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicEye.release.xcconfig"; path = "Target Support Files/Pods-PublicEye/Pods-PublicEye.release.xcconfig"; sourceTree = "<group>"; };
 		BAC09A77C11AF56419EA0A34 /* Pods_PublicEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PublicEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,15 +87,75 @@
 		0EB0BE692B8A629300A88FE2 /* PublicEye */ = {
 			isa = PBXGroup;
 			children = (
+				0EE9311C2B8A944A001D9D74 /* Add Issue */,
+				0EB0BE8C2B8A82EC00A88FE2 /* Dashboard */,
+				0EB0BE872B8A7C1900A88FE2 /* Models */,
+				0EB0BE862B8A781E00A88FE2 /* Login Register */,
+				0EB0BE832B8A779600A88FE2 /* Utils */,
+				0EB0BE802B8A767800A88FE2 /* Colors */,
 				0EB0BE6A2B8A629300A88FE2 /* AppDelegate.swift */,
 				0EB0BE6C2B8A629300A88FE2 /* SceneDelegate.swift */,
-				0EB0BE6E2B8A629300A88FE2 /* ViewController.swift */,
-				0EB0BE702B8A629300A88FE2 /* Main.storyboard */,
 				0EB0BE732B8A629500A88FE2 /* Assets.xcassets */,
 				0EB0BE752B8A629500A88FE2 /* LaunchScreen.storyboard */,
 				0EB0BE782B8A629500A88FE2 /* Info.plist */,
+				0EB0BE8A2B8A7FE800A88FE2 /* GoogleService-Info.plist */,
 			);
 			path = PublicEye;
+			sourceTree = "<group>";
+		};
+		0EB0BE802B8A767800A88FE2 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0BE812B8A768600A88FE2 /* CustomColors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		0EB0BE832B8A779600A88FE2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0BE842B8A77A000A88FE2 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0EB0BE862B8A781E00A88FE2 /* Login Register */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0BE6E2B8A629300A88FE2 /* ViewController.swift */,
+				0EB0BE702B8A629300A88FE2 /* Main.storyboard */,
+			);
+			path = "Login Register";
+			sourceTree = "<group>";
+		};
+		0EB0BE872B8A7C1900A88FE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0BE882B8A7C2900A88FE2 /* FIRUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EB0BE8C2B8A82EC00A88FE2 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0EB0BE8D2B8A82F900A88FE2 /* Dashboard.storyboard */,
+				0EB0BE8F2B8A868400A88FE2 /* DashboardTableViewCell.swift */,
+				0EB0BE902B8A868400A88FE2 /* DashboardTableViewCell.xib */,
+				0EB0BE932B8A86BD00A88FE2 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		0EE9311C2B8A944A001D9D74 /* Add Issue */ = {
+			isa = PBXGroup;
+			children = (
+				0EE9311D2B8A945C001D9D74 /* AddIssueViewController.swift */,
+				0EE9311F2B8A9467001D9D74 /* AddIssue.storyboard */,
+				0EE931212B8A94D0001D9D74 /* AddIssueTableViewCell.swift */,
+				0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */,
+			);
+			path = "Add Issue";
 			sourceTree = "<group>";
 		};
 		21C7F2EB52F81375F7EA17CA /* Frameworks */ = {
@@ -88,7 +172,6 @@
 				463B9188E93ABC13C006D453 /* Pods-PublicEye.debug.xcconfig */,
 				9BA4D5D5E8A9BC2F7D77FFB3 /* Pods-PublicEye.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,8 +236,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EB0BE772B8A629500A88FE2 /* LaunchScreen.storyboard in Resources */,
+				0EB0BE8E2B8A82F900A88FE2 /* Dashboard.storyboard in Resources */,
+				0EE931202B8A9467001D9D74 /* AddIssue.storyboard in Resources */,
+				0EB0BE8B2B8A7FE800A88FE2 /* GoogleService-Info.plist in Resources */,
 				0EB0BE742B8A629500A88FE2 /* Assets.xcassets in Resources */,
+				0EB0BE922B8A868400A88FE2 /* DashboardTableViewCell.xib in Resources */,
 				0EB0BE722B8A629300A88FE2 /* Main.storyboard in Resources */,
+				0EE931242B8A94D0001D9D74 /* AddIssueTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +295,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EB0BE852B8A77A000A88FE2 /* Utils.swift in Sources */,
 				0EB0BE6F2B8A629300A88FE2 /* ViewController.swift in Sources */,
+				0EB0BE892B8A7C2900A88FE2 /* FIRUser.swift in Sources */,
+				0EE931232B8A94D0001D9D74 /* AddIssueTableViewCell.swift in Sources */,
 				0EB0BE6B2B8A629300A88FE2 /* AppDelegate.swift in Sources */,
+				0EB0BE822B8A768600A88FE2 /* CustomColors.swift in Sources */,
 				0EB0BE6D2B8A629300A88FE2 /* SceneDelegate.swift in Sources */,
+				0EB0BE912B8A868400A88FE2 /* DashboardTableViewCell.swift in Sources */,
+				0EE9311E2B8A945C001D9D74 /* AddIssueViewController.swift in Sources */,
+				0EB0BE942B8A86BD00A88FE2 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85R4T7NRSX;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PublicEye/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -392,6 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85R4T7NRSX;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PublicEye/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
