@@ -15,8 +15,8 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnAddIssue.backgroundColor = CustomColors.shared.primaryLight
-        Utils.shared.cornerRadius(view: btnAddIssue, radius: 40.0)
+        btnAddIssue.backgroundColor = CustomColors.shared.colorAddIssue
+        Utils.shared.cornerRadius(view: btnAddIssue, radius: 44.0)
         
         btnAddIssue.setTitle(" ADD ISSUE", for: .normal)
         btnAddIssue.setTitleColor(.white, for: .normal)

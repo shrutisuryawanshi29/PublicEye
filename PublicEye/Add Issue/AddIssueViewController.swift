@@ -203,9 +203,14 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
             let output = try model.prediction(input: input)
             let text = output.IdentityShapedArray
             
-            if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 2 || text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 1{
+            if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 1{
                 if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? AddIssueTableViewCell {
                     cell.txtFldDescription.text = "Pothole found"
+                }
+            }
+            else if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 2  {
+                if let cell = self.addIssueTblViw.cellForRow(at: IndexPath(row: 0, section: 0)) as? AddIssueTableViewCell {
+                    cell.txtFldDescription.text = "Waterlogging found"
                 }
             }
             else if text.scalars.firstIndex(of: text.scalars.max() ?? 0) == 0 {

@@ -18,4 +18,10 @@ public class CustomColors {
     
     let darkText = UIColor(red: 19/256, green: 19/256, blue: 19/256, alpha: 1)      //#131313
     
+    let colorAddIssue = UIColor(red: 160/256, green: 195/256, blue: 210/256, alpha: 1) //#A0C3D2
+    
+    let color1 = UIColor(red: 146/256, green: 120/256, blue: 173/256, alpha: 1) //#9278AD
+    let color2 = UIColor(red: 120/256, green: 147/256, blue: 173/256, alpha: 1) //#7893AD
+    let color3 = UIColor(red: 173/256, green: 120/256, blue: 147/256, alpha: 1) //#AD7893
+    let color4 = UIColor(red: 255/256, green: 171/256, blue: 145/256, alpha: 1) //#FFAB91
 }

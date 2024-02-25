@@ -16,6 +16,8 @@ class DashboardViewController: UIViewController {
     
     var responseData = [ResponseDataModel]()
     
+    var colorBgForCards = [CustomColors.shared.color1,CustomColors.shared.color2,CustomColors.shared.color3,CustomColors.shared.color4]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
@@ -55,8 +57,8 @@ class DashboardViewController: UIViewController {
         tblViw.register(UINib(nibName: "DashboardTableViewCell", bundle: nil), forCellReuseIdentifier: "DashboardTableViewCell")
         self.view.backgroundColor = CustomColors.shared.background
         
-        btnAddIssue.backgroundColor = CustomColors.shared.primaryLight
-        Utils.shared.cornerRadius(view: btnAddIssue, radius: 40.0)
+        btnAddIssue.backgroundColor = CustomColors.shared.colorAddIssue
+        Utils.shared.cornerRadius(view: btnAddIssue, radius: 44.0)
     
         btnAddIssue.setTitle(" ADD ISSUE", for: .normal)
         btnAddIssue.setTitleColor(.white, for: .normal)
@@ -98,7 +100,7 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         Utils.shared.cornerRadius( view: cell.viewBtn)
         cell.viewBtn.isHidden = true
         cell.viewBtn.backgroundColor = CustomColors.shared.primaryLight
-        cell.bgViw.backgroundColor = CustomColors.shared.primaryDark
+        cell.bgViw.backgroundColor = colorBgForCards[indexPath.row%4]
         cell.bgViw.dropShadow(shadowOpacity: 0.3)
         Utils.shared.cornerRadius(view: cell.bgViw, radius: 10)
         if (responseData[indexPath.row].status == "Closed") {

@@ -58,10 +58,10 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uiY-GP-7Kw">
-                                <rect key="frame" x="295" y="698" width="80" height="80"/>
+                                <rect key="frame" x="285" y="688" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="0Un-CB-61t"/>
-                                    <constraint firstAttribute="height" constant="80" id="ahC-W7-ve7"/>
+                                    <constraint firstAttribute="width" constant="90" id="0Un-CB-61t"/>
+                                    <constraint firstAttribute="height" constant="90" id="ahC-W7-ve7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
@@ -112,16 +112,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log your first issue!" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3O-ph-5Fm">
-                                <rect key="frame" x="18" y="669" width="357" height="19"/>
+                                <rect key="frame" x="18" y="659" width="357" height="19"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzA-MX-yla">
-                                <rect key="frame" x="295" y="698" width="80" height="80"/>
+                                <rect key="frame" x="285" y="688" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="AZv-Io-eoc"/>
-                                    <constraint firstAttribute="height" constant="80" id="Fbg-H6-Lrz"/>
+                                    <constraint firstAttribute="width" constant="90" id="AZv-Io-eoc"/>
+                                    <constraint firstAttribute="height" constant="90" id="Fbg-H6-Lrz"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title=" "/>
