@@ -26,6 +26,8 @@
 		0EE931232B8A94D0001D9D74 /* AddIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE931212B8A94D0001D9D74 /* AddIssueTableViewCell.swift */; };
 		0EE931242B8A94D0001D9D74 /* AddIssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */; };
 		0EE931262B8AD276001D9D74 /* ResponseDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE931252B8AD276001D9D74 /* ResponseDataModel.swift */; };
+		0EE931282B8ADDC4001D9D74 /* PublicEye.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 0EE931272B8ADDC3001D9D74 /* PublicEye.mlpackage */; };
+		0EE9312B2B8ADF41001D9D74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9312A2B8ADF41001D9D74 /* Extensions.swift */; };
 		D72CF549F0D8FE9BE39DCEC2 /* Pods_PublicEye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC09A77C11AF56419EA0A34 /* Pods_PublicEye.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		0EE931212B8A94D0001D9D74 /* AddIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddIssueTableViewCell.xib; sourceTree = "<group>"; };
 		0EE931252B8AD276001D9D74 /* ResponseDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDataModel.swift; sourceTree = "<group>"; };
+		0EE931272B8ADDC3001D9D74 /* PublicEye.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = PublicEye.mlpackage; sourceTree = "<group>"; };
+		0EE9312A2B8ADF41001D9D74 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		463B9188E93ABC13C006D453 /* Pods-PublicEye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicEye.debug.xcconfig"; path = "Target Support Files/Pods-PublicEye/Pods-PublicEye.debug.xcconfig"; sourceTree = "<group>"; };
 		9BA4D5D5E8A9BC2F7D77FFB3 /* Pods-PublicEye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PublicEye.release.xcconfig"; path = "Target Support Files/Pods-PublicEye/Pods-PublicEye.release.xcconfig"; sourceTree = "<group>"; };
 		BAC09A77C11AF56419EA0A34 /* Pods_PublicEye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PublicEye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,7 @@
 		0EB0BE692B8A629300A88FE2 /* PublicEye */ = {
 			isa = PBXGroup;
 			children = (
+				0EE931292B8ADF2F001D9D74 /* Common */,
 				0EE9311C2B8A944A001D9D74 /* Add Issue */,
 				0EB0BE8C2B8A82EC00A88FE2 /* Dashboard */,
 				0EB0BE872B8A7C1900A88FE2 /* Models */,
@@ -133,6 +138,7 @@
 		0EB0BE872B8A7C1900A88FE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0EE931272B8ADDC3001D9D74 /* PublicEye.mlpackage */,
 				0EB0BE882B8A7C2900A88FE2 /* FIRUser.swift */,
 				0EE931252B8AD276001D9D74 /* ResponseDataModel.swift */,
 			);
@@ -159,6 +165,14 @@
 				0EE931222B8A94D0001D9D74 /* AddIssueTableViewCell.xib */,
 			);
 			path = "Add Issue";
+			sourceTree = "<group>";
+		};
+		0EE931292B8ADF2F001D9D74 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0EE9312A2B8ADF41001D9D74 /* Extensions.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		21C7F2EB52F81375F7EA17CA /* Frameworks */ = {
@@ -298,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EE931282B8ADDC4001D9D74 /* PublicEye.mlpackage in Sources */,
 				0EB0BE852B8A77A000A88FE2 /* Utils.swift in Sources */,
 				0EB0BE6F2B8A629300A88FE2 /* ViewController.swift in Sources */,
 				0EE931262B8AD276001D9D74 /* ResponseDataModel.swift in Sources */,
@@ -305,6 +320,7 @@
 				0EE931232B8A94D0001D9D74 /* AddIssueTableViewCell.swift in Sources */,
 				0EB0BE6B2B8A629300A88FE2 /* AppDelegate.swift in Sources */,
 				0EB0BE822B8A768600A88FE2 /* CustomColors.swift in Sources */,
+				0EE9312B2B8ADF41001D9D74 /* Extensions.swift in Sources */,
 				0EB0BE6D2B8A629300A88FE2 /* SceneDelegate.swift in Sources */,
 				0EB0BE912B8A868400A88FE2 /* DashboardTableViewCell.swift in Sources */,
 				0EE9311E2B8A945C001D9D74 /* AddIssueViewController.swift in Sources */,

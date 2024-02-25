@@ -12,6 +12,8 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 import CoreLocation
+import CoreML
+import Vision
 
 class AddIssueViewController: UIViewController {
 
@@ -23,6 +25,9 @@ class AddIssueViewController: UIViewController {
     var activityView : UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     var imageURL: URL? = nil
+    
+    var request: VNCoreMLRequest?
+    var visionModel: VNCoreMLModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,6 +136,35 @@ extension AddIssueViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension AddIssueViewController : UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+    
+    
+    private func analyzeImage(image: UIImage?) {
+        guard let buffer = image?.resize(size: CGSize(width: 150, height: 150))?
+            .getCVPixelBuffer() else {
+            return
+        }
+        
+        do {
+            let config = MLModelConfiguration()
+            let model = try PublicEye(configuration: config)
+            let input = PublicEyeInput(conv2d_input: buffer)
+            
+            let output = try model.prediction(input: input)
+            let text = output.IdentityShapedArray
+            if text.scalars[0] < text.scalars[1] {
+                print("Pothole spotted in the given location. Requesting the concerned authorities to kindly fix it")
+            }
+            else {
+                print("Great Road, no complains")
+            }
+            
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         guard let image = info[.originalImage] as? UIImage else {
@@ -142,6 +176,9 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
         self.imageIssue = image
         self.addIssueTblViw.reloadData()
         
+        analyzeImage(image: image)
+        
+        /*
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
         let storageRef = Storage.storage(url: "gs://publiceye-aaac5.appspot.com").reference()
         let userPhotoRef = storageRef.child(Auth.auth().currentUser!.uid).child("\(Date().timeIntervalSince1970)")
@@ -156,7 +193,7 @@ extension AddIssueViewController : UINavigationControllerDelegate, UIImagePicker
                 guard let imgurl = url else {return }
                 self.imageURL = imgurl
             }
-        }
+        }*/
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
