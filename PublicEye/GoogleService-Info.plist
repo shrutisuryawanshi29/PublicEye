@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>521893222330-jjdpfpkjlf4teak168d04ll6v4k5bfgu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.521893222330-jjdpfpkjlf4teak168d04ll6v4k5bfgu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCrOea5HskudNq-UkG2y96iUWGB6Hx8d1o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>521893222330</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pearlhack.PublicEye</string>
+	<key>PROJECT_ID</key>
+	<string>publiceye-aaac5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>publiceye-aaac5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:521893222330:ios:2ecb2e73a3a51dc37baf83</string>
+</dict>
+</plist>

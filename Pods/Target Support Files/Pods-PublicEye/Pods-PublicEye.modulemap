@@ -1,0 +1,6 @@
+framework module Pods_PublicEye {
+  umbrella header "Pods-PublicEye-umbrella.h"
+
+  export *
+  module * { export * }
+}
