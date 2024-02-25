@@ -42,7 +42,9 @@ class Utils {
         for _ in 1...digits {
             number += "\(Int.random(in: 1...9))"
         }
-        return "PE"+number+"\(Date().timeIntervalSince1970)"
+        var str = "PE"+number+"\(Date().timeIntervalSince1970)"
+        
+        return String(str.split(separator: ".")[0])
     }
 }
 

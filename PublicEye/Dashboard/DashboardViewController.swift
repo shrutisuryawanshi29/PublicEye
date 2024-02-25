@@ -7,15 +7,37 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var tblViw: UITableView!
     @IBOutlet weak var btnAddIssue: UIButton!
     
+    var responseData = [ResponseDataModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        responseData = []
+        let database = Firestore.firestore()
+        let query: Query = database.collection("issues").whereField("uid", isEqualTo: Auth.auth().currentUser!.uid)
+        
+        query.getDocuments(completion: { data, error in
+            if error != nil {
+                return
+            }
+            
+            for document in data!.documents {
+                var dict = document.data()
+                self.responseData.append(ResponseDataModel(description: dict["description"] as! String, landmark: dict["landmark"] as! String, pincode: dict["pincode"] as! String, currentDate: dict["current_date"] as! String, imageUrl: dict["image_url"] as! String, issueId: dict["issue_id"] as! String, status: dict["status"] as! String))
+            }
+            self.tblViw.reloadData()
+        })
+        
     }
     
     func initialSetup() {
@@ -55,7 +77,7 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.responseData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,11 +85,27 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         cell.selectionStyle = .none
         Utils.shared.cornerRadius(view: cell.statusViw,radius: 8.0)
         Utils.shared.cornerRadius( view: cell.viewBtn)
+        cell.viewBtn.isHidden = true
         cell.viewBtn.backgroundColor = CustomColors.shared.primaryLight
         cell.bgViw.backgroundColor = CustomColors.shared.primaryDark
         cell.bgViw.dropShadow(shadowOpacity: 0.3)
         Utils.shared.cornerRadius(view: cell.bgViw, radius: 10)
-        cell.statusViw.backgroundColor = indexPath.row % 2 == 0 ? .green : .red
+        if (responseData[indexPath.row].status == "Closed") {
+            cell.statusViw.backgroundColor = .green
+        }
+        else if (responseData[indexPath.row].status == "Inprogress") {
+            cell.statusViw.backgroundColor = .yellow
+        }
+        else {
+            cell.statusViw.backgroundColor = .red
+        }
+        
+        cell.lblIdDate.text = "\(responseData[indexPath.row].issueId!) | \(responseData[indexPath.row].currentDate!)"
+        cell.lblDescription.text = "LOCATION: \(responseData[indexPath.row].landmark!)\n\nDESCRIPTION: \(responseData[indexPath.row].description!)"
+        cell.lblPincode.text = "ZIPCODE: "+responseData[indexPath.row].pincode!
+        
+        
+        
         return cell
     }
     

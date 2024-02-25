@@ -80,6 +80,7 @@ class AddIssueViewController: UIViewController {
                  "image_url": self.imageURL?.absoluteString,
                  "uid": Auth.auth().currentUser!.uid,
                  "issue_id": Utils.shared.generateRandomIssueID(),
+                 "status": "Open",
                 ] as [String : Any]
                 
                 let database = Firestore.firestore()

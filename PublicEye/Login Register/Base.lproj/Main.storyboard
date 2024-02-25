@@ -16,10 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-23-ffC">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-23-ffC">
                                 <rect key="frame" x="20" y="172.66666666666663" width="353" height="472"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-V8-tWG">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPZ-V8-tWG">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="472"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aoh-dF-3eM" customClass="MFTextField">
@@ -64,7 +64,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-z1-qh4">
-                                                <rect key="frame" x="23" y="402" width="310" height="50"/>
+                                                <rect key="frame" x="20" y="402" width="313" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Ek5-M3-cQU"/>
                                                 </constraints>
@@ -81,7 +81,7 @@
                                             <constraint firstItem="jPA-Di-6Io" firstAttribute="top" secondItem="Aoh-dF-3eM" secondAttribute="bottom" constant="20" id="4gW-kD-mbE"/>
                                             <constraint firstItem="Aoh-dF-3eM" firstAttribute="top" secondItem="MPZ-V8-tWG" secondAttribute="top" constant="102.00000000000003" id="Bvd-9a-LH9"/>
                                             <constraint firstAttribute="trailing" secondItem="b1P-hO-17L" secondAttribute="trailing" constant="23" id="FsO-El-2mv"/>
-                                            <constraint firstItem="PK1-z1-qh4" firstAttribute="leading" secondItem="MPZ-V8-tWG" secondAttribute="leading" constant="23" id="I0I-nA-Lhg"/>
+                                            <constraint firstItem="PK1-z1-qh4" firstAttribute="leading" secondItem="MPZ-V8-tWG" secondAttribute="leading" constant="20" id="I0I-nA-Lhg"/>
                                             <constraint firstAttribute="trailing" secondItem="7RY-e5-BW3" secondAttribute="trailing" constant="23" id="IZh-TM-Ml7"/>
                                             <constraint firstItem="PK1-z1-qh4" firstAttribute="top" secondItem="b1P-hO-17L" secondAttribute="bottom" constant="40" id="KbD-vW-UKc"/>
                                             <constraint firstAttribute="trailing" secondItem="Aoh-dF-3eM" secondAttribute="trailing" constant="23" id="V3P-oZ-ebs"/>
@@ -156,6 +156,17 @@
                                     <constraint firstAttribute="width" constant="100" id="YcH-Gf-a64"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B56-bK-uoO">
+                                <rect key="frame" x="117" y="669.66666666666663" width="159" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rrE-sH-4NX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LOGIN / REGISTER">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -163,16 +174,19 @@
                             <constraint firstItem="yH5-IY-143" firstAttribute="trailing" secondItem="0qb-23-ffC" secondAttribute="trailing" id="05C-xw-Wc8"/>
                             <constraint firstItem="yH5-IY-143" firstAttribute="top" secondItem="0qb-23-ffC" secondAttribute="top" id="9ak-3l-JeF"/>
                             <constraint firstItem="0qb-23-ffC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EfI-mf-ajg"/>
+                            <constraint firstItem="B56-bK-uoO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c4F-pc-yHM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0qb-23-ffC" secondAttribute="trailing" constant="20" id="fMZ-Hq-lR3"/>
                             <constraint firstItem="bch-DH-Vus" firstAttribute="top" secondItem="0qb-23-ffC" secondAttribute="top" constant="-60" id="gIo-E7-Gfw"/>
                             <constraint firstItem="yH5-IY-143" firstAttribute="bottom" secondItem="0qb-23-ffC" secondAttribute="bottom" id="neS-Ap-mfG"/>
                             <constraint firstItem="0qb-23-ffC" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qBd-CJ-Jsq"/>
+                            <constraint firstItem="B56-bK-uoO" firstAttribute="top" secondItem="0qb-23-ffC" secondAttribute="bottom" constant="25" id="qFe-fL-Ccs"/>
                             <constraint firstItem="bch-DH-Vus" firstAttribute="centerX" secondItem="0qb-23-ffC" secondAttribute="centerX" id="v97-Km-gg9"/>
                             <constraint firstItem="yH5-IY-143" firstAttribute="leading" secondItem="0qb-23-ffC" secondAttribute="leading" id="vKI-wz-yIl"/>
                             <constraint firstItem="0qb-23-ffC" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-30" id="z2V-E0-cdl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCommonLoginRegister" destination="B56-bK-uoO" id="Lcb-q9-Hjf"/>
                         <outlet property="imgLogo" destination="bch-DH-Vus" id="Wdb-SS-yXq"/>
                         <outlet property="loginBtn" destination="OSC-zV-HAg" id="H33-nX-AeF"/>
                         <outlet property="registerBtn" destination="PK1-z1-qh4" id="6pu-kM-C3F"/>
@@ -180,8 +194,11 @@
                         <outlet property="txtFldPassword" destination="b1P-hO-17L" id="Qsg-LG-U4z"/>
                         <outlet property="txtFname" destination="Aoh-dF-3eM" id="lvk-vp-GQf"/>
                         <outlet property="txtLname" destination="jPA-Di-6Io" id="hJM-b5-tSb"/>
+                        <outlet property="txtloginemail" destination="UJe-5x-lOX" id="dGR-Bd-Jb3"/>
+                        <outlet property="txtloginpwd" destination="v9c-Ie-hfl" id="GAn-9p-k6n"/>
                         <outlet property="viewBg" destination="0qb-23-ffC" id="jtT-l8-35j"/>
                         <outlet property="viewLogin" destination="yH5-IY-143" id="0ug-VW-09T"/>
+                        <outlet property="viewRegister" destination="MPZ-V8-tWG" id="1zW-nM-HmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
