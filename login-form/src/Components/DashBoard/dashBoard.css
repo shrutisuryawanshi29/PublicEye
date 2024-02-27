@@ -1,0 +1,100 @@
+/* dashBoard.css */
+
+.back {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 60px;
+    border-radius: 50px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap as needed */
+    padding: 10px;
+  text-align: center;
+  position: fixed; /* Fixed position */
+  top: 0; /* Position at the top */
+  left: 0;
+  width: 100%; 
+  }
+
+  .user-icon {
+    margin-right: 10px;
+  }
+
+  .dashboard-text {
+    font-size: 40px;
+    font-weight: bold;
+   
+  }
+  
+  .sign-out-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .card {
+    border: 1px solid #9189cd;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #9189cd;
+    box-shadow: 0 0 10px 1px #9189cd        ; 
+    transition: transform 0.3s ease-in-out;
+  }
+
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+    color: #2c3642; /* Dodger Blue */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 15px;
+    color: #555555;
+  }
+  
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .loading {
+    font-size: 24px;
+    color: #555555;
+  }
+
+   .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } 
+  
+  /* Add more color variations based on your preferences */
