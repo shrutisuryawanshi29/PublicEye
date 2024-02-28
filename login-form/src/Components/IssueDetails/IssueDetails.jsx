@@ -47,9 +47,6 @@ const IssueDetails = () => {
     try {
       // Update the status in the Firestore document
       const docRef = doc(db, "issues", issueId);
-      await setDoc(docRef, {
-        status: selectedStatus,
-      }, {merge: true});
   
       // Fetch the updated data from Firestore and update the state
       const updatedDocSnap = await updateDoc(docRef, {status: selectedStatus})
